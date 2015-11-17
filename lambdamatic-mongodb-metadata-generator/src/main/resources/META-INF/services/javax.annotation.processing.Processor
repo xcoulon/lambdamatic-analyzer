@@ -1,0 +1,2 @@
+org.lambdamatic.mongodb.apt.DocumentAnnotationProcessor
+org.lambdamatic.mongodb.apt.EmbeddedDocumentAnnotationProcessor

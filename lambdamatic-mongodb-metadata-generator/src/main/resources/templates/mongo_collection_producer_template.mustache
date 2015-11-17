@@ -1,0 +1,33 @@
+package {{packageName}};
+
+import javax.annotation.Generated;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
+
+import org.lambdamatic.mongodb.internal.configuration.MongoClientConfiguration;
+
+import com.mongodb.MongoClient;
+
+
+/**
+ * CDI Producer for the {@link {{mongoCollectionClassName}}} class.
+ *
+ */
+@Generated(value = "{{processorClassName}}")
+@ApplicationScoped
+public class {{simpleClassName}} {
+
+    /**
+     * Creates and returns a new instance of {{mongoCollectionClassName}}.
+     *
+     * @param mongoClient the {@link MongoClient}.
+     * @param mongoClientConfiguration the client configuration, including the name of the database to connect to.
+     * @return a new instance of {{mongoCollectionClassName}} 
+     */
+    @Produces
+    public {{mongoCollectionClassName}} get{{mongoCollectionClassName}}(final MongoClient mongoClient, 
+        final MongoClientConfiguration mongoClientConfiguration) {
+        return new {{mongoCollectionClassName}}(mongoClient, mongoClientConfiguration.getDatabaseName());
+    }
+
+}

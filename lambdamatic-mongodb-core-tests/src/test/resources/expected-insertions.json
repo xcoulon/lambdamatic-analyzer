@@ -1,0 +1,6 @@
+{ "foo": [
+
+	{ "_targetClass" : "com.sample.Foo", "enumFoo" : "FOO", "primitiveIntField" : 42, 
+	  "stringField" : "jdoe", "stringList" : ["foo", "bar", "baz"] }
+	]
+}

@@ -1,0 +1,31 @@
+package {{packageName}};
+
+import javax.annotation.Generated;
+
+import org.lambdamatic.mongodb.annotations.Document;
+import org.lambdamatic.mongodb.annotations.EmbeddedDocument;
+import org.lambdamatic.mongodb.metadata.UpdateMetadata;
+
+{{#requiredImports}}
+import {{.}};
+{{/requiredImports}}
+/**
+ * The {@link UpdateMetadata} class associated with the {@link {{domainClassName}}} domain class 
+ * annotated with {@link Document} or {@link EmbeddedDocument}.
+ *
+ * <p><strong>Note:</strong> This class is not meant to be extended by the user.</p>
+ */
+@Generated(value = "{{processorClassName}}")
+public abstract class {{simpleClassName}} implements UpdateMetadata<{{domainClassName}}> {
+
+{{#fields}}
+    /**
+     * the update field for the '{{javaFieldName}}' domain class field.
+     */
+{{#annotations}}
+    {{{.}}}
+{{/annotations}}
+    public {{& javaFieldType.simpleName}} {{javaFieldName}};
+
+{{/fields}}  
+}
